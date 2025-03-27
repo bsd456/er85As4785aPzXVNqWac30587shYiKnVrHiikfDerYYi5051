@@ -123,28 +123,12 @@ return __('bunga').value;
 function getJangka(){
 return __('jangka').value;
 }
- function count() {
-if (periode > 100000) {
-                       return Swal.fire({
-                            icon: 'error',
-                            title: 'Maaf',
-                            text: "Tenor maksimal 80 bulan"
-                        })
-						}
+
 function getFlat(){
 var c_balance = getPlafon();
 var total_periods = getJangka();
 var annual_interest = getBunga();
 
-
-  if (total_periods  == '' || c_balance == '' || !annual_interest) {
-                return Swal.fire({
-                    icon: 'error',
-                    title: 'Maaf',
-                    text: "Harap lengkapi field di atas"
-                })
-            } else {
-                plafon = revertToNumber(plafon)
 
         if(c_balance>=7500000){
 		
