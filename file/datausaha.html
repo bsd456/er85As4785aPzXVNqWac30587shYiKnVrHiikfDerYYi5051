@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>SIM Shinta Daya</title>
+  <meta name="theme-color" content="#FF396F">
+  <meta name="msapplication-navbutton-color" content="#FF396F">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF396F">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sw-custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="css/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="css/datatables/dataTables.bootstrap.css">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jqc-1.12.4/dt-1.13.1/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.3.1/css/fixedHeader.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap.min.css">
+  
+  </head>
+<body>
+    <div class="appHeader">
+        <div class="left">
+ <img src="img/logo.png" width="100%" height="50px">
+        </div>
+		 <div class="right">
+<a href="beranda.html" class="item">
+ <img src="img/back.png" width="100%" height="50px">
+ 	</a>
+        </div>
+		
+            <div class="progress" style="display:none;position:absolute;top:50px;z-index:4;left:0px;width: 100%">
+                <div id="progressBar" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0%</span>
+                </div>
+            </div>
+    </div>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3 class="text-center mb-4 mt-4"></h3>
+                    <h5 class="text-center mb-4 mt-4"></h5>
+                    <!-- Button trigger modal -->
+					
+                    <br>
+                    <br>
+					</div>
+					</div>
+					<div class="row  d-flex align-items-stretch form-cust">
+    <div class="col-lg-4 simulation-item">
+                <h4></h4>
+				<hr>
+                <h3 label for="oke"><b>Data Usaha Shinta Daya</b></label></h3>
+				<hr>
+            </div>
+			</div>
+                    <table
+                        id="example"
+                        class="table table-striped table-bordered mt-2 mb-2"
+                        style="width: 107%" align="center">
+					
+					
+					</table>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+       <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body">
+					<form>
+     
+                                <input type="hidden" class="form-control" id="id">
+							
+							<div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Nama Nasabah</label>
+                                <input type="text" class="form-control" id="nama" name="nama" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Jenis Usaha</label>
+                                <input type="text" class="form-control" id="jenis" name="jenis" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">No Handphone</label>
+                                <input type="number" class="form-control" id="nohp" name="nohp" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Alamat</label>
+                                <input type="text" class="form-control" id="alamat" name="alamat" required>
+                            </div><div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Nama Marketing</label>
+                                <input type="text" class="form-control" id="marketing" name="marketing" readonly>
+                            </div>
+							
+                        </form>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Simpan</button>
+                    </div>
+
+            
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jqc-1.12.4/dt-1.13.1/datatables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap.min.js"></script>
+<script>
+		$(document).ready(function() {
+		    const BASE_URL = "https://script.google.com/macros/s/AKfycbyFaQdZT1i0B8tiQrzDVlgFJNpiShSAhsRxMooNds9IT_M1Y_LmkrvS9NwuebRCw-Tyww/exec";
+		    const table = $("#example").DataTable({
+		    ajax: BASE_URL + "?action=get-product",
+		    columns: [
+			{
+		    title: "No",
+		    data: "id"
+		    },
+			{
+		    title: "Nama Nasabah",
+		    data: "nama"
+		    },
+		    {
+		    title: "Jenis Usaha",
+		    data: "jenis"
+		    },
+		    {
+		    title: "No Hanphone",
+		    data: "nohp"
+		    },
+            {
+		    title: "Alamat",
+		    data: "alamat"
+		    },
+			{
+		    title: "Nama Marketing",
+		    data: "marketing"
+		    }
+		    
+        ],
+		
+		    rowId: "id",
+		    liveAjax: true,
+		    responsive: true,
+		})
+
+		$('#tambahorder').on('click', () => {
+		clear();
+			$('#myModal').modal('show');
+			$('#myModal .modal-title').text('Tambah Order');
+		})
+		
+		$('#example tbody').on('click', '#edit', function() {
+			var tr = $(this).parents('tr');
+			var prevtr = tr.prev('tr')[0];
+			var data = table.row(prevtr).data();
+			console.log(data);
+            $('#id').val(data.id);
+            $('#nama').val(data.nama);
+            $('#jenis').val(data.jenis);
+            $('#nohp').val(data.nohp);
+			$('#alamat').val(data.alamat);
+            $('#marketing').val(data.marketing);
+			$('#myModal').modal('show');
+			$('#myModal .modal-title').text('Edit Data');
+			
+		})
+		
+		$('.modal-footer .btn-success').on('click', () => {
+
+            const nama = $('#nama').val();
+            const jenis = $('#jenis').val();
+            const nohp = $('#nohp').val();
+			const alamat = $('#alamat').val();
+            const marketing = $('#marketing').val();
+            const id = $('#id').val();
+
+let apiUrl = '';
+
+if (id) {
+apiUrl =`${BASE_URL}?action=update&nama=${nama}&jenis=${jenis}&nohp=${nohp}&alamat=${alamat}&marketing=${marketing}&id=${id}`;
+} else {
+apiUrl =`${BASE_URL}?action=insert&nama=${nama}&jenis=${jenis}&nohp=${nohp}&alamat=${alamat}&marketing=${marketing}`;
+}
+
+$.getJSON(apiUrl, function(result){
+alert(result.message);
+location.reload();
+})
+
+})	
+})
+	
+	function clear(){
+$('#idorder').val('');
+$('#nama').val('');
+$('#jenis').val('');
+$('#nohp').val('');
+$('#alamat').val('');
+$('#marketing').val('');
+}
+
+
+		</script>
+    </body>
+</html>

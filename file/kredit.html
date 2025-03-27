@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>SIM Shinta Daya</title>
+  <meta name="theme-color" content="#FF396F">
+  <meta name="msapplication-navbutton-color" content="#FF396F">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF396F">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sw-custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="css/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="css/datatables/dataTables.bootstrap.css">
+  <style>
+	@media screen and (max-width: 520px) {
+	table.responsive {
+		width: 100%;
+	}
+	thead {
+		display: none;
+	}
+	td {
+		display: block;
+		text-align: right;
+		border-right: 1px solid #e1edff;
+	}
+	td::before {
+		float: left;
+		text-transform: uppercase;
+		font-weight: bold;
+		content: attr(data-header);
+	}
+}
+</style>
+  
+
+  
+  </head>
+<body>
+    <div class="appHeader">
+        <div class="left">
+ <img src="img/logo.png" width="100%" height="50px">
+        </div>
+		<div class="right">
+<a href="beranda.html" class="item">
+ <img src="img/back.png" width="100%" height="50px">
+        </div>
+			</a>
+            <div class="progress" style="display:none;position:absolute;top:50px;z-index:4;left:0px;width: 100%">
+                <div id="progressBar" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0%</span>
+                </div>
+            </div>
+    </div>
+   <main id="main">
+    <div class="container">
+	 <div class="mb-8 col-1">
+	 <div class="row  d-flex align-items-stretch form-cust">
+                    <h4 class="mb-4">Simulasi Pembayaran</h4>
+                </div>
+</div>
+  <div class="row  d-flex align-items-stretch form-cust">
+    <div class="col-lg-4 simulation-item">
+                <h4></h4>
+				<hr>
+                <h2 label for="oke">Simulasi Kredit</label></h2>
+				<hr>
+            </div>
+<main id="main">
+        <section id="content">
+            <div class="container">
+                        
+                   <div class="row  d-flex align-items-stretch form-cust">  
+                        <div class="col-lg-4 simulation-item dropdown d-flex flex-column">
+                            <h4 label for="interest_type">Pilih Jenis Produk</label></h4>
+                            <button class="btn btn-white border text-left"  style="border: 1px solid #ccc;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pilih Jenis Produk
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li class="dropdown-item font-weight-bold">Simulasi Kredit (Sesuai SK)</li>
+                                <li><a class="dropdown-item ml-3" href="#" data-value="credit_1">Simulasi Flat Kombinasi</a></li>
+                                <li><a class="dropdown-item ml-3" href="#" data-value="credit_2">Simulasi Flat Rate</a></li>
+                            </ul>
+                        </div>
+					
+
+                      <div class="col-lg-4 simulation-item">
+					  <h4></h4>
+                                <h4 label for="nominal">Nominal/Plafon</label></h4>
+                                <input type="text" class="form-control" name="nominal" id="nominal" placeholder="Nominal kredit">
+                        </div>
+                        <div class="col-lg-4 simulation-item">
+						<h4></h4>
+                            <h4 label for="tenor">Jangka Waktu/Bulan</label></h4>
+                            <input type="number" class="form-control" name="tenor" id="tenor"
+                            placeholder="">
+                        </div>
+						 <div class="mb-2">
+                            <button class="btn btn-primary  primary-custom mt-4" onclick="count()">Hitung</button>
+                    </div>
+						<div class="col-lg-4 simulation-item">
+							<h5><b>Keterangan</b></h5>
+							<h6><i>*Angsuran kredit merupakan simulasi/ estimasi</h6></i>
+							<h6><i>*Perhitungan tersebut masih belum termasuk biaya lain-lain</h6></i>
+                             </div>
+					 <div class="col-lg-4" data-aos="fade-up"></div>
+                        <div class="d-flex flex-column align-items-start p-2">
+                            <span>Besaran bunga/tahun <h3 id="interest"></h3></span>
+                            <span>Estimasi Nominal angsuran/bulan<h3 for="angsuran" id="angsuran"></h3></span>
+                            <br>
+                            </div>
+							<div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+							 <div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+							 <div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+							<div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+							<div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+							 <div class="col-lg-4 simulation-item">
+							<h4></h4>
+                             </div>
+                    </div>
+            </div>
+						<div class="appBottomMenu">
+        <a href="beranda.html" class="item">
+            <div class="col">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                          <strong>Beranda</strong>
+            </div>
+        </a>
+
+        <a href="tabungan.html" class="item">
+            <div class="col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-224c0-35.3-28.7-64-64-64L80 128c-8.8 0-16-7.2-16-16s7.2-16 16-16l368 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L64 32zM416 272a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+                <strong>Tabungan</strong>
+            </div>
+        </a>
+
+        <a href="deposito.html" class="item">
+            <div class="col">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M470.7 9.4c3 3.1 5.3 6.6 6.9 10.3s2.4 7.8 2.4 12.2c0 0 0 .1 0 .1c0 0 0 0 0 0l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-18.7L310.6 214.6c-11.8 11.8-30.8 12.6-43.5 1.7L176 138.1 84.8 216.3c-13.4 11.5-33.6 9.9-45.1-3.5s-9.9-33.6 3.5-45.1l112-96c12-10.3 29.7-10.3 41.7 0l89.5 76.7L370.7 64 352 64c-17.7 0-32-14.3-32-32s14.3-32 32-32l96 0s0 0 0 0c8.8 0 16.8 3.6 22.6 9.3l.1 .1zM0 304c0-26.5 21.5-48 48-48l416 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 304zM48 416l0 48 48 0c0-26.5-21.5-48-48-48zM96 304l-48 0 0 48c26.5 0 48-21.5 48-48zM464 416c-26.5 0-48 21.5-48 48l48 0 0-48zM416 304c0 26.5 21.5 48 48 48l0-48-48 0zm-96 80a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                <strong>Deposito</strong>
+            </div>
+        </a>
+
+        <a href="kredit.html" class="item">
+            <div class="col">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M64 32C28.7 32 0 60.7 0 96l0 32 576 0 0-32c0-35.3-28.7-64-64-64L64 32zM576 224L0 224 0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-192zM112 352l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z"/></svg>
+                <strong>Kredit</strong>
+            </div>
+        </a>
+        </section>
+
+    </main>
+
+    <script src="js/jquery.js"></script>
+		<script src="js/dropdown.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"
+        integrity="sha256-COxwIctJg+4YcOK90L6sFf84Z18G3tTmqfK98vtnz2Q=" crossorigin="anonymous"></script>
+    
+    <script>
+        let global_interest_type = "";
+
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent navigation
+                const selectedText = this.textContent.trim();
+                const selectedValue = this.getAttribute('data-value');
+                global_interest_type = selectedValue;
+
+                // Update button text
+                const dropdownButton = document.getElementById('dropdownMenuButton');
+                if (selectedValue) dropdownButton.textContent = selectedText;
+
+                 $('#div_table_rate').removeClass("d-flex").addClass("d-none");
+				$('#div_table_sebrakan').removeClass("d-flex").addClass("d-none");
+				$('#div_table_kombinasi').removeClass("d-flex").addClass("d-none");
+
+                $('#tenor').attr("placeholder", "")
+                    if (selectedValue === "credit_5_a") $('#tenor').attr("placeholder", "Maks. 12 Bulan")
+                    if (selectedValue === "credit_5_b") $('#tenor').attr("placeholder", "Maks. 12 Bulan")
+                    if (selectedValue === "credit_5_c") $('#tenor').attr("placeholder", "Maks. 12 Bulan")
+                    if (selectedValue === "credit_3") $('#tenor').attr("placeholder", "Maks. 60 Bulan")
+                });
+        });
+
+        var revertToNumber = (formattedValue) => {
+            return Number(formattedValue.replace(/[^0-9]/g, '')); // Remove non-numeric characters and convert to a number
+        }
+
+        var formatToRupiah = (value) => {
+            const input = value.toString().replace(/[^\d]/g, '')
+            const number = Number(input);
+            if (isNaN(number)) return input;
+
+            return `Rp. ${number.toLocaleString('id-ID')}`;
+        }
+
+        var formatToRupiahEndResult = (value) => {
+            const input = value.toString().replace(/[^\d.,]/g, '');
+
+            // Handle decimals: Replace commas with dots (if any) for consistent parsing
+            const sanitizedInput = input.replace(',', '.');
+
+            // Convert to a number
+            const number = parseFloat(sanitizedInput);
+            if (isNaN(number)) return value; // Return the original input if invalid
+
+            return `Rp. ${number.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+        }
+
+        function count() {
+            // credit_1 = k
+            // credit_2 = r
+            // credit_3 = s
+            // credit_4 = k
+            // credit_5 = d
+            
+            let interest_type = global_interest_type;
+            console.log(interest_type);
+            let periode = $('#tenor').val();
+            let plafon = $('#nominal').val();
+            let angsuran = 0;
+            let interest = 0;
+            let interest_yearly = 0;
+            if (periode == '' || plafon == '' || !interest_type) {
+                return Swal.fire({
+                    icon: 'error',
+                    title: 'Maaf',
+                    text: "Harap lengkapi field di atas"
+                })
+            } else {
+                plafon = revertToNumber(plafon)
+                
+                if (interest_type === "credit_1") { 
+                    if (periode > 100000) {
+                       return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 80 bulan"
+                        })
+                    }
+                    
+                    if (plafon >= 3000000 && plafon < 5000000) {
+						interest = 1.60;
+                        interest_yearly = 19.2;
+					if (periode > 36)
+                        return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 35"
+                        })
+                    }
+                    if (plafon >= 5000000 && plafon < 50000000)	{
+					if (periode <= 12){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+					if (periode > 12 && periode < 36){
+                        interest = 1.00;
+                        interest_yearly = 12.0;}
+					if (periode >= 36 && periode < 48){
+                        interest = 1.05;
+                        interest_yearly = 12.6;}
+                    }
+					   if (plafon >= 50000000 && plafon < 100000000)	{
+					if (periode <= 12){
+                        interest = 0.75;
+                        interest_yearly = 9.0;}
+					if (periode > 12 && periode < 36){
+                        interest = 0.85;
+                        interest_yearly = 10.2;}
+					if (periode >= 36 && periode <= 48){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+					if (periode > 48 && periode <= 60){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+                    }
+					
+						if (plafon >= 100000000 && plafon < 500000000)	{
+					if (periode <= 12){
+                        interest = 0.75;
+                        interest_yearly = 9.0;}
+					if (periode > 12 && periode < 36){
+                        interest = 0.85;
+                        interest_yearly = 10.2;}
+					if (periode >= 36 && periode <= 48){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+					if (periode > 48 && periode <= 80){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+					if (periode > 80){
+                        interest = 1.10;
+                        interest_yearly = 13.2;}
+                    }
+					
+						if (plafon >= 500000000)	{
+					if (periode <= 12){
+                        interest = 0.55;
+                        interest_yearly = 6.60;}
+					if (periode > 12 && periode < 36){
+                        interest = 0.80;
+                        interest_yearly = 9.6;}
+					if (periode >= 36 && periode <= 80){
+                        interest = 0.90;
+                        interest_yearly = 10.8;}
+					if (periode > 80){
+                        interest = 1.00;
+                        interest_yearly = 12.0;}
+                    }
+					
+                 $('#table_kombinasi').empty();
+
+                    // add sebrakan row
+                    const addRow = (data) => {
+                        const newRow = `
+                            <tr>
+                                <td data-header="JW">${data.id}</td>
+                                <td data-header="Baki Debet">${data.baki}</td>
+                                <td data-header="Pokok">${data.pokok}</td>
+                                <td data-header="Bunga">${data.bunga}</td>
+                                <td data-header="Total Angsuran">${data.total_angsuran}</td>
+                            </tr>
+                        `
+
+                        $('#table_kombinasi').append(newRow);
+                    }
+					
+                    let _plafon = plafon;
+
+                    for (let i = 0; i <= periode; i++) {
+                        const _bunga = Math.round(interest * _plafon / 100);
+                        const _pokok = Math.round(_plafon/periode);
+                        const data = {
+                            id: i == 0 ? `&nbsp;` : i,
+                            baki: formatToRupiahEndResult(_plafon),
+                            pokok: formatToRupiahEndResult(_pokok),
+                            bunga: formatToRupiahEndResult(_bunga),
+                            total_angsuran: formatToRupiahEndResult(_pokok + _bunga)  
+                        }
+
+                        addRow(data);
+
+                       _plafon = _plafon - (plafon/periode);
+                    }
+
+                    $('#div_table_kombinasi').addClass("d-flex flex-column align-items-center col-12 m-2");
+                }
+                
+                if (interest_type === "credit_4") { 
+                    if (periode > 60) {
+                       return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 60 bulan"
+                        })
+                    }
+                    
+                    if (plafon < 5000000) {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Plafon minimal 5.000.000"
+                       })
+                    }
+                    if (plafon >= 5000000 && plafon < 50000000) {
+                        interest = 1.05;
+                        interest_yearly = 12.6;
+                    if (periode > 60)
+                       return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 60 bulan"
+                       })
+                    }
+                    if (plafon >= 50000000 && plafon < 100000000) {
+                        interest = 0.95;
+                        interest_yearly = 11.4;
+                    }
+                    if (plafon >= 100000000 && plafon < 500000000) {
+                        interest = 0.95;
+                        interest_yearly = 11.4;
+                    }
+                    if (plafon >= 500000000) {
+                        interest = 0.90;
+                        interest_yearly = 10.8;
+                    }
+                }
+                
+                 if (interest_type === "credit_2") { 
+                    if (periode > 20) {
+                       return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 20 bulan"
+                        })
+                    }
+                    
+                    if (plafon >= 3000000 && plafon < 5000000) {
+						interest = 1.60;
+                        interest_yearly = 19.2;
+					if (periode > 20)
+                        return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 20"
+                        })
+                    }
+                    if (plafon >= 5000000 && plafon < 50000000)	{
+					if (periode <= 12){
+                        interest = 0.95;
+                        interest_yearly = 11.4;}
+					if (periode > 12 && periode <= 20){
+                        interest = 1.30;
+                        interest_yearly = 15.6;}
+                    }
+					
+					   if (plafon >= 50000000 && plafon < 100000000)	{
+					if (periode <= 12){
+                        interest = 0.75;
+                        interest_yearly = 9.0;}
+					if (periode > 12 && periode <= 20){
+                        interest = 0.90;
+                        interest_yearly = 10.8;}
+                    }
+					
+						if (plafon >= 100000000 && plafon < 500000000)	{
+					if (periode <= 12){
+                        interest = 0.75;
+                        interest_yearly = 9.0;}
+					if (periode > 12 && periode <= 20){
+                        interest = 0.90;
+                        interest_yearly = 10.8;}
+                    }
+					
+						if (plafon >= 500000000)	{
+					if (periode <= 12){
+                        interest = 0.55;
+                        interest_yearly = 6.60;}
+					if (periode > 12 && periode <= 20){
+                        interest = 0.85;
+                        interest_yearly = 10.2;}
+                    }
+				
+				 $('#table_rate').empty();
+
+                    // add sebrakan row
+                    const addRow = (data) => {
+                        const newRow = `
+                            <tr>
+                                <td data-header="JW">${data.id}</td>
+                                <td data-header="Baki Debet">${data.baki}</td>
+                                <td data-header="Pokok">${data.pokok}</td>
+                                <td data-header="Bunga">${data.bunga}</td>
+                                <td data-header="Total Angsuran">${data.total_angsuran}</td>
+                            </tr>
+                        `
+
+                        $('#table_rate').append(newRow);
+                    }
+					
+                    let _plafon = plafon;
+
+                    for (let i = 0; i <= periode; i++) {
+                        const _bunga = Math.round(interest * plafon / 100);
+                        const _pokok = Math.round(plafon/periode);
+                        const data = {
+                            id: i == 0 ? `&nbsp;` : i,
+                            baki: formatToRupiahEndResult(_plafon),
+                            pokok: formatToRupiahEndResult(_pokok),
+                            bunga: formatToRupiahEndResult(_bunga),
+                            total_angsuran: formatToRupiahEndResult(_pokok + _bunga)  
+                        }
+
+                        addRow(data);
+
+                       _plafon = _plafon - (plafon/periode);
+                    }
+
+                    $('#div_table_rate').addClass("d-flex flex-column align-items-center col-12 m-2");
+                }
+				
+
+                if (interest_type === "credit_3") {
+                    if (plafon < 50000000) {
+                        interest = 2.00;
+                        interest_yearly = 24;
+                    } 
+                    if (plafon >= 50000000 && plafon < 500000000) {
+                        interest = 1.85;
+                        interest_yearly = 22.2;
+                    } 
+                    if (plafon >= 500000000) {
+                        interest = 1.75;
+                        interest_yearly = 21;
+                    }
+
+
+                    if (periode > 60) {
+                       return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: "Tenor maksimal 60 bulan"
+                        })
+                    }
+
+                    $('#table_sebrakan').empty();
+
+                    // add sebrakan row
+                    const addRow = (data) => {
+                        const newRow = `
+                            <tr>
+                                <td data-header="JW">${data.id}</td>
+                                <td data-header="Baki Debet">${data.baki}</td>
+                                <td data-header="Pokok">${data.pokok}</td>
+                                <td data-header="Bunga">${data.bunga}</td>
+                                <td data-header="Total Angsuran">${data.total_angsuran}</td>
+                            </tr>
+                        `
+
+                        $('#table_sebrakan').append(newRow);
+                    }
+					
+                    let _plafon = plafon;
+
+                    for (let i = 0; i <= periode; i++) {
+                        const _bunga = Math.round(interest * _plafon / 100);
+                        const _pokok = Math.round(plafon/periode);
+                        const data = {
+                            id: i == 0 ? `&nbsp;` : i,
+                            baki: formatToRupiahEndResult(_plafon),
+                            pokok: formatToRupiahEndResult(_pokok),
+                            bunga: formatToRupiahEndResult(_bunga),
+                            total_angsuran: formatToRupiahEndResult(_pokok + _bunga)  
+                        }
+
+                        addRow(data);
+
+                        _plafon = _plafon - (plafon/periode);
+                    }
+
+                    $('#div_table_sebrakan').addClass("d-flex flex-column align-items-center col-12 m-2");
+                }
+				
+				
+
+                if (["credit_5_a", "credit_5_b", "credit_5_c"].includes(interest_type)) { 
+                    if (periode > 12) {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf',
+                            text: `Tenor maksimal 12 bulan`
+                        })
+                    }
+
+                    if (interest_type === "credit_5_a") {
+                        interest = 0.4;
+                        interest_yearly = 4.75;
+                    } 
+
+
+                    if (interest_type === "credit_5_b") {
+                        interest = 0.48;
+                        interest_yearly = 5.75;
+                    } 
+
+
+                    if (interest_type === "credit_5_c") {
+                        interest = 0.52;
+                        interest_yearly = 6.25;
+                    } 
+
+                }
+
+                if (interest == 0) {
+                    return Swal.fire({
+                        icon: 'error',
+                        title: 'Maaf',
+                        text: "Tenor yang Anda masukkan tidak tersedia"
+                    })
+                } else {
+                    angsuran = (interest * plafon / 100) + (plafon / periode);
+                    $('#angsuran').text(formatToRupiahEndResult(angsuran));
+                    $('#interest').text(interest_yearly + "%");
+                }                
+            }
+        }
+
+
+        $(function() {
+            $("#nominal").keyup(function(e) {
+                $(this).val(formatToRupiah($(this).val()));
+            });
+        });
+
+
+        var format = function(num) {
+            var str = num.toString().replace("", ""),
+                parts = false,
+                output = [],
+                i = 1,
+                formatted = null;
+            if (str.indexOf(".") > 0) {
+                parts = str.split(".");
+                str = parts[0];
+            }
+            str = str.split("").reverse();
+            for (var j = 0, len = str.length; j < len; j++) {
+                if (str[j] != ",") {
+                    output.push(str[j]);
+                    if (i % 3 == 0 && j < (len - 1)) {
+                        output.push(",");
+                    }
+                    i++;
+                }
+            }
+            formatted = output.reverse().join("");
+            return ("" + formatted + ((parts) ? "." + parts[1].substr(0, 2) : ""));
+        };
+    </script>
+
+</body>
+
+</html>

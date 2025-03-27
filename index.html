@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>SIM Shinta Daya</title>
+  <meta name="theme-color" content="#FF396F">
+  <meta name="msapplication-navbutton-color" content="#FF396F">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF396F">
+  <link rel="stylesheet" href="file/css/style.css">
+  <link rel="stylesheet" href="file/css/sw-custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="file/css/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="file/css/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="file/css/magnific-popup/magnific-popup.css">
+  
+<style>
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.subuh, .pagi, .siang, .sore, .malam, .malam1, .begadang {padding:10px 10px;border-radius:8px;display:inline-block;margin-left:5px}
+.begadang{
+  color: #000000;
+  background: #FFFFFF;
+}
+.malam1 {
+  color: #000000;
+  background: #FFFFFF;
+}
+.malam{
+  color: #000000;
+  background: #FFFFFF;
+}
+.sore {
+  color: #000000;
+  background: #FFFFFF;
+}
+.siang {
+  color: #000000;
+  background: #FFFFFF;
+}
+.pagi {
+  color: #000000;
+  background: #FFFFFF;
+}
+.subuh {
+  color: #000000;
+  background: #FFFFFF;
+}
+</style>
+</head>
+<body>
+    <div class="appHeader">
+        <div class="left">
+ <img src="file/img/logo.png" width="100%" height="50px">
+        </div>
+		<div class="right">
+<a href="https://bsd456.github.io/simpan.github.io/" class="item">
+ <img src="img/exit.png" width="100%" height="30px">
+ 	</a>
+	</div>
+            <div class="progress" style="display:none;position:absolute;top:50px;z-index:4;left:0px;width: 100%">
+                <div id="progressBar" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0%</span>
+                </div>
+            </div>
+    </div>
+    <div id="appCapsule">
+        <!-- Wallet Card -->
+        <div class="section wallet-card-section pt-1">
+            <div class="wallet-card">
+                <!-- Balance -->
+                <div class="balance">
+                    <div class="left">
+                        <div data-content='Welcome!' id='greeting'/>
+						</div>
+                    </div>
+					</div>
+                <!-- * Balance -->
+                <!-- Wallet Footer -->
+                <div class="wallet-footer">
+				<div class="item">
+                        <a href="file/datausaha.html">
+                           <img src="file/img/icondu.png" width="60px" height="100%">
+                               <ion-icon name="person-outline"></ion-icon>
+							   <h4></h4>
+                            <strong>Data Usaha Nasabah</strong>
+                        </a>  
+                    </div>
+                    <div class="item">
+                        <a href="file/tabungan.html">
+                              <img src="file/img/icontab.png" width="60px" height="100%">
+							  <h4></h4>
+                            <strong>Simulasi <br>Tabungan</strong>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="file/pilihdepo.html">
+                            <img src="file/img/icondepo.png" width="60px" height="100%">
+							<h4></h4>
+                            <strong>Simulasi <br> Deposito</strong>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="file/kredit.html">
+                             <img src="file/img/iconkredit.png" width="60px" height="100%">
+							 <h4></h4>
+                            <strong>Simulasi <br>Kredit</strong>
+							<h4></h4>
+                        </a>
+                    </div>
+					
+                    
+					</div>
+					<div class="wallet-footer">
+					<div class="item">
+                    </div>
+                    <div class="item">
+              
+                    </div>
+					<div class="item">
+                        
+                    </div>
+					<div class="item">
+                        
+                    </div></div>
+                </div>
+                <!-- * Wallet Footer -->
+            
+<div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                          <strong>Beranda</strong>
+            </div>
+        </a>
+
+        <a href="file/tabungan.html" class="item">
+            <div class="col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-224c0-35.3-28.7-64-64-64L80 128c-8.8 0-16-7.2-16-16s7.2-16 16-16l368 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L64 32zM416 272a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+                <strong>Tabungan</strong>
+            </div>
+        </a>
+
+        <a href="file/deposito.html" class="item">
+            <div class="col">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M470.7 9.4c3 3.1 5.3 6.6 6.9 10.3s2.4 7.8 2.4 12.2c0 0 0 .1 0 .1c0 0 0 0 0 0l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-18.7L310.6 214.6c-11.8 11.8-30.8 12.6-43.5 1.7L176 138.1 84.8 216.3c-13.4 11.5-33.6 9.9-45.1-3.5s-9.9-33.6 3.5-45.1l112-96c12-10.3 29.7-10.3 41.7 0l89.5 76.7L370.7 64 352 64c-17.7 0-32-14.3-32-32s14.3-32 32-32l96 0s0 0 0 0c8.8 0 16.8 3.6 22.6 9.3l.1 .1zM0 304c0-26.5 21.5-48 48-48l416 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 304zM48 416l0 48 48 0c0-26.5-21.5-48-48-48zM96 304l-48 0 0 48c26.5 0 48-21.5 48-48zM464 416c-26.5 0-48 21.5-48 48l48 0 0-48zM416 304c0 26.5 21.5 48 48 48l0-48-48 0zm-96 80a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+                <strong>Deposito</strong>
+            </div>
+        </a>
+
+        <a href="file/kredit.html" class="item">
+            <div class="col">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20px" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M64 32C28.7 32 0 60.7 0 96l0 32 576 0 0-32c0-35.3-28.7-64-64-64L64 32zM576 224L0 224 0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-192zM112 352l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z"/></svg>
+                <strong>Kredit</strong>
+            </div>
+        </a>
+    </div>
+
+
+<script>
+ /*<![CDATA[*/ 
+var now = new Date();
+var hours = now.getHours();
+
+var greetings = [
+   {"waktu": "begadang",
+    "greet": "Selamat Malam <br>",
+    "hr": hours >= 24 || hours <= 3
+  }, 
+  {"waktu":"subuh",
+    "greet": "Selamat Pagi <br>",
+    "hr": hours == 4
+  },  
+  {"waktu":"pagi",
+    "greet": "Selamat Pagi <br>",
+    "hr": hours >= 5 && hours <= 10
+  },
+    {"waktu":"siang",
+    "greet": "Selamat Siang <br>",
+    "hr": hours >= 11 && hours <= 15
+  },
+  {"waktu":"sore",
+    "greet": "Selamat Sore <br>",
+    "hr": hours >= 16 && hours <= 18
+  },
+  {"waktu":"malam",
+    "greet": "Selamat Malam <br>",
+    "hr": hours >= 19 && hours <= 20
+  },
+  {"waktu":"malam1",
+    "greet": "Selamat Malam <br>",
+    "hr": hours >= 21 && hours <= 23
+  }
+];
+
+var message = document.getElementById("greeting");
+message.innerHTML = greetings.find(el=>el.hr).greet;
+message.className = greetings.find(el=>el.hr).waktu;
+/*]]>*/
+</script>
+	
+	</body>
+	</html>
