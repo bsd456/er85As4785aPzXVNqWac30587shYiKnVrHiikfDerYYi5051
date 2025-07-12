@@ -1,1 +1,173 @@
-[]
+{
+  "credit_1": {
+    "max_tenor": 80,
+    "rules": [
+      {
+        "plafon_min": 3000000,
+        "plafon_max": 5000000,
+        "max_tenor": 35,
+        "interest": 1.60,
+        "interest_yearly": 19.2
+      },
+      {
+        "plafon_min": 5000000,
+        "plafon_max": 50000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.95, "interest_yearly": 11.4 },
+          { "min_tenor": 13, "max_tenor": 35, "interest": 1.00, "interest_yearly": 12.0 },
+          { "min_tenor": 36, "max_tenor": 47, "interest": 1.05, "interest_yearly": 12.6 }
+        ]
+      },
+      {
+        "plafon_min": 50000000,
+        "plafon_max": 100000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.75, "interest_yearly": 9.0 },
+          { "min_tenor": 13, "max_tenor": 35, "interest": 0.85, "interest_yearly": 10.2 },
+          { "min_tenor": 36, "max_tenor": 48, "interest": 0.95, "interest_yearly": 11.4 },
+          { "min_tenor": 49, "max_tenor": 60, "interest": 0.95, "interest_yearly": 11.4 }
+        ]
+      },
+      {
+        "plafon_min": 100000000,
+        "plafon_max": 500000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.75, "interest_yearly": 9.0 },
+          { "min_tenor": 13, "max_tenor": 35, "interest": 0.85, "interest_yearly": 10.2 },
+          { "min_tenor": 36, "max_tenor": 48, "interest": 0.95, "interest_yearly": 11.4 },
+          { "min_tenor": 49, "max_tenor": 80, "interest": 0.95, "interest_yearly": 11.4 },
+          { "min_tenor": 81, "max_tenor": 9999, "interest": 1.10, "interest_yearly": 13.2 }
+        ]
+      },
+      {
+        "plafon_min": 500000000,
+        "plafon_max": null,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.55, "interest_yearly": 6.6 },
+          { "min_tenor": 13, "max_tenor": 35, "interest": 0.80, "interest_yearly": 9.6 },
+          { "min_tenor": 36, "max_tenor": 80, "interest": 0.90, "interest_yearly": 10.8 },
+          { "min_tenor": 81, "max_tenor": 9999, "interest": 1.00, "interest_yearly": 12.0 }
+        ]
+      }
+    ]
+  },
+
+  "credit_2": {
+    "max_tenor": 20,
+    "rules": [
+      {
+        "plafon_min": 3000000,
+        "plafon_max": 5000000,
+        "max_tenor": 20,
+        "interest": 1.60,
+        "interest_yearly": 19.2
+      },
+      {
+        "plafon_min": 5000000,
+        "plafon_max": 50000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.95, "interest_yearly": 11.4 },
+          { "min_tenor": 13, "max_tenor": 20, "interest": 1.30, "interest_yearly": 15.6 }
+        ]
+      },
+      {
+        "plafon_min": 50000000,
+        "plafon_max": 100000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.75, "interest_yearly": 9.0 },
+          { "min_tenor": 13, "max_tenor": 20, "interest": 0.90, "interest_yearly": 10.8 }
+        ]
+      },
+      {
+        "plafon_min": 100000000,
+        "plafon_max": 500000000,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.75, "interest_yearly": 9.0 },
+          { "min_tenor": 13, "max_tenor": 20, "interest": 0.90, "interest_yearly": 10.8 }
+        ]
+      },
+      {
+        "plafon_min": 500000000,
+        "plafon_max": null,
+        "periods": [
+          { "max_tenor": 12, "interest": 0.55, "interest_yearly": 6.6 },
+          { "min_tenor": 13, "max_tenor": 20, "interest": 0.85, "interest_yearly": 10.2 }
+        ]
+      }
+    ]
+  },
+
+  "credit_3": {
+    "max_tenor": 60,
+    "rules": [
+      {
+        "plafon_min": 0,
+        "plafon_max": 50000000,
+        "interest": 2.00,
+        "interest_yearly": 24
+      },
+      {
+        "plafon_min": 50000000,
+        "plafon_max": 500000000,
+        "interest": 1.85,
+        "interest_yearly": 22.2
+      },
+      {
+        "plafon_min": 500000000,
+        "plafon_max": null,
+        "interest": 1.75,
+        "interest_yearly": 21
+      }
+    ]
+  },
+
+  "credit_4": {
+    "max_tenor": 60,
+    "min_plafon": 5000000,
+    "rules": [
+      {
+        "plafon_min": 5000000,
+        "plafon_max": 50000000,
+        "interest": 1.05,
+        "interest_yearly": 12.6
+      },
+      {
+        "plafon_min": 50000000,
+        "plafon_max": 100000000,
+        "interest": 0.95,
+        "interest_yearly": 11.4
+      },
+      {
+        "plafon_min": 100000000,
+        "plafon_max": 500000000,
+        "interest": 0.95,
+        "interest_yearly": 11.4
+      },
+      {
+        "plafon_min": 500000000,
+        "plafon_max": null,
+        "interest": 0.90,
+        "interest_yearly": 10.8
+      }
+    ]
+  },
+
+  "credit_5_a": {
+    "max_tenor": 12,
+    "interest": 0.4,
+    "interest_yearly": 4.75
+  },
+
+  "credit_5_b": {
+    "max_tenor": 12,
+    "interest": 0.48,
+    "interest_yearly": 5.75
+  },
+
+  "credit_5_c": {
+    "max_tenor": 12,
+    "interest": 0.52,
+    "interest_yearly": 6.25
+  }
+}
+
